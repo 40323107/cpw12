@@ -12,6 +12,7 @@ def application(environ, start_response):
         response_body = '\n'.join(response_body)
     else:
         ctype = 'text/html'
+
         response_body = '''def multiplication_table():
     start = 1
     end = 10
@@ -23,6 +24,7 @@ def application(environ, start_response):
     return outstring
  
 print(multiplication_table())'''
+
 
     status = '200 OK'
     response_headers = [('Content-Type', ctype), ('Content-Length', str(len(response_body)))]
